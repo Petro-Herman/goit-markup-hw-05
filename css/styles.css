@@ -457,6 +457,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer-email {
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #ffffff;
     border: 1px solid #fff;
     border-radius: 4px;
     width: 264px;
@@ -467,11 +471,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .footer-email::placeholder {
+
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
-    color: #fff;
+    color: #ffffff;
 }
 
 .soc-item {
@@ -511,36 +516,41 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .button-subscribe {
-    background: #4d5ae5;
+    font-family: "Roboto", sans-serif;
+    background-color: #4d5ae5;
     border-radius: 4px;
     border: none;
     padding: 8px 24px;
-    width: 165px;
+    /* width: 165px; */
+    min-width: 165px;
     height: 40px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* gap: 16px; */
     /* position: relative; */
 }
 
 .icon-subscribe {
-    /* position: absolute; */
+    margin-left: 16px;
+    position: absolute;
     fill: #fff;
-    /* top: 8px;
-    right: 24px; */
+    top: 8px;
+    right: 24px;
 }
 
 .footer-form {
     display: flex;
     gap: 24px;
     align-items: center;
+    position: relative;
 }
 
 .backdrop {
@@ -555,6 +565,8 @@ h1, h2, h3, h4, h5, h6, p {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-open {
@@ -573,36 +585,63 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translate(-50%, -50%);
     padding: 24px;
     border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 72px 24px 24px 24px;
 }
 
-.modal-close {
+/* .modal-close { */
     /* display: block; */
     /* margin-left: auto; */
-    position: absolute;
-    right: 24px;
-    top: 24px;
+    
     /* border-radius: 100%; */
     /* fill: #e7e9fc; */
     /* stroke-width: 1px; */
     /* stroke: rgba(0, 0, 0, 0.1); */
-}
+/* } */
 
 .close {
-    border-radius: 100%;
-    fill: #e7e9fc;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border-radius: 50%;
+    background-color: #e7e9fc;
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.1);
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     fill: #2e2f42;
     width: 24px;
     height: 24px;
-    transition: background-color, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close:hover {
     /* border-radius: 100%; */
     background-color: #404bbf;
-    fill: #fff;
+    border: none;
+    /* fill: #fff; */
+}
+.close:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+.close-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-icon:hover {
+    fill: #ffffff;
+}
+.close-icon:focus {
+    fill: #ffffff;
 }
 
 .modal-title {
@@ -613,7 +652,7 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
     color: #2e2f42;
     /* ? */
-    margin-top: 48px;
+    /* margin-top: 48px; */
     margin-bottom: 16px;
     /* ? */
     /* position: absolute; */
@@ -623,12 +662,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .modal-label {
+    
+    
+    /* padding-left: 38px; */
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     display: block;
     margin-bottom: 4px;
+    /* transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .modal-label span {
@@ -642,12 +685,13 @@ h1, h2, h3, h4, h5, h6, p {
 
 .modal-input {
     width: 100%;
-    height: 58px;
+    height: 40px;
+    background-color: transparent;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: transparent;
-    padding-left: 16px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 38px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
@@ -656,6 +700,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .modal-input:focus + .modal-icon {
     fill: #4d5ae5;
+}
+
+.comment {
+    margin-bottom: 16px;
 }
 
 .comment::placeholder {
@@ -672,19 +720,23 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .modal-send {
+    display: block;
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background: #4d5ae5;
+    background-color: #4d5ae5;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
-    color: #fff;
-    border: 0;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     /* position: absolute;
     left: 50%;
     transform: translateX(-50%); */
@@ -719,6 +771,12 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 8px 16px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     resize: none;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text:focus {
@@ -753,6 +811,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #404bbf;
     border: 1px solid #404bbf;
     fill: #f4f4fd;
+    border: none
 }
 
 .check-text span {
@@ -769,8 +828,16 @@ h1, h2, h3, h4, h5, h6, p {
     fill: transparent;
 }
 
+.check-icon {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+}
+
 .privace-policy {
     margin-top: 16px;
+    margin-bottom: 24px;
 }
 
 /* .modal-check-icon { */
