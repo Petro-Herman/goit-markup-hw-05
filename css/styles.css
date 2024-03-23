@@ -447,8 +447,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .botom-form {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between; */
+    /* align-items: center; */
 }
 
 .footer {
@@ -503,6 +503,11 @@ h1, h2, h3, h4, h5, h6, p {
 .subscribe {
     display: flex;
     align-items: baseline;
+}
+
+.subscribe-wrap {
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .button-subscribe {
