@@ -798,8 +798,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .check-text {
-    display: flex;
-    align-items: center;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -815,13 +813,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .check-text span {
-    /* display: block; */
-    
     margin-right: 8px;
     position: relative;
-    /* display: flex; */
-    
-    
 }
 
 .check-icon {
